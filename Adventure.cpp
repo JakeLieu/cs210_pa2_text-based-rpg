@@ -165,7 +165,30 @@ Scene<Moment>* Adventure::readScene(std::ifstream& in, const std::string& label)
 //     and ask again.
 //   - If the input ends (getline fails), return 0.
 int Adventure::askChoice(int numChoices) {
-    return 0;
+    std::string input;
+
+    while (true) {
+        std::cout << "Your choice: ";
+
+        if (!std::getline(std::cin, input)) {
+            return 0;
+        }
+
+        if (input == "1") {
+            return 1;
+        }
+
+        if (input == "2" && numChoices >= 2) {
+            return 2;
+        }
+
+        if (input == "3" && numChoices >= 3) {
+            return 3;
+        }
+
+        std::cout << "Please type a number from 1 to "
+                  << numChoices << "." << std::endl;
+    }
 }
 
 // TODO 13: play the story once from the start.

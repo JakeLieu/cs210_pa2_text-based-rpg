@@ -55,7 +55,7 @@ public:
 
     // TODO 3: true if this scene is an ending.
     bool isEnding() const {
-        return false;
+        return numChoices_ == 0;
     }
 
     // TODO 4: the scene behind slot index.

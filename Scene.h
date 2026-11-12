@@ -36,6 +36,13 @@ public:
         // TODO 2:
         // Free everything this scene owns.
         // Think about what it owns, and what each slot points to.
+
+        for (int i = 0; i < numChoices_; i++) {
+            delete choices_[i];
+        }
+
+        delete[] choices_;
+        delete data_;
     }
 
     T* getData() const {

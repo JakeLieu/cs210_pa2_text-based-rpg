@@ -49,7 +49,24 @@ private:
     // starting at scene. A single ending scene has height 0.
     // An empty story has height -1.
     int height(Scene<T>* scene) const {
-        return -1;
+        if (scene == nullptr) {
+            return -1;
+        }
+
+        if (scene->isEnding()) {
+            return 0;
+        }
+
+        int maxHeight = -1;
+        for (int i = 0; i < scene->getNumChoices(); i++) {
+            int childHeight = height(scene->getChoice(i));
+
+            if (childHeight > maxHeight) {
+                maxHeight = childHeight;
+            }
+        }
+
+        return maxHeight + 1;
     }
 
 public:

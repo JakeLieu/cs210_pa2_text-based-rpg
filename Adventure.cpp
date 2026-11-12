@@ -97,7 +97,63 @@ bool Adventure::load(const std::string& fileName) {
 //   - If anything goes wrong at any depth, return nullptr
 //     and make sure nothing you already built is leaked.
 Scene<Moment>* Adventure::readScene(std::ifstream& in, const std::string& label) {
-    return nullptr;
+    std::string sceneDescription;
+    std::string hpValue;
+    std::string lootValue;
+    std::string item;
+    std::string choiceCount;
+
+    if (!readField(in, "SCENE", sceneDescription)) {
+        return nullptr;
+    }
+
+    if (!readField(in, "HP", hpValue)) {
+        return nullptr;
+    }
+
+    if (!readField(in, "LOOT", lootValue)) {
+        return nullptr;
+    }
+
+    if (!readField(in, "ITEM", item)) {
+        return nullptr;
+    }
+
+    if (!readField(in, "CHOICES", choiceCount)) {
+        return nullptr;
+    }
+
+    int hp = std::stoi(hpValue);
+    int loot = std::stoi(lootValue);
+    int numChoices = std::stoi(choiceCount);
+
+    if (numChoices < 0 || numChoices > Scene<Moment>::MAX_CHOICES) {
+        std::cout << "Error: scene \"" << sceneDescription << "\" has " << numChoices << " choices. The limit is 3." << std::endl;
+        return nullptr;
+    }
+
+    Moment* moment = new Moment(sceneDescription, label, hp, loot, item);
+    Scene<Moment>* scene = new Scene<Moment>(moment, numChoices);
+
+    for (int i = 0; i < numChoices; i++) {
+        std::string childLabel;
+
+        if (!readField(in, "LABEL", childLabel)) {
+            delete scene;
+            return nullptr;
+        }
+
+        Scene<Moment>* child = readScene(in, childLabel);
+
+        if (child == nullptr) {
+            delete scene;
+            return nullptr;
+        }
+
+        scene->setChoice(i, child);
+    }
+
+    return scene;
 }
 
 // ===================== PLAYING =====================

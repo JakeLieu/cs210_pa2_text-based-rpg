@@ -420,5 +420,18 @@ int Adventure::bestLoot(Scene<Moment>* scene, int hp, const std::string& path, s
 //   Optimal advisor
 //     Result: no path survives this story
 void Adventure::optimalRun() const {
+    std::string optimalPath;
 
+    int optimalLoot = bestLoot(tree_.getRoot(), startHp_,"",optimalPath);
+
+    std::cout << "Optimal advisor" << std::endl;
+
+    if (optimalLoot == -1) {
+        std::cout << "  Result: no path survives this story" << std::endl;
+    }
+    else {
+        std::cout << "  Path: " << optimalPath << std::endl;
+        std::cout << "  Loot: " << optimalLoot << std::endl;
+        std::cout << "  Result: reached an ending" << std::endl;
+    }
 }

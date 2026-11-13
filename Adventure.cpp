@@ -395,7 +395,7 @@ int Adventure::bestLoot(Scene<Moment>* scene, int hp, const std::string& path, s
         std::string childPath = extendPath(path, i + 1);
         std::string possibleBestPath;
 
-        int childLoot = bestLoot(scene->getChoice(i), hp,childPath,possibleBestPath);
+        int childLoot = bestLoot(scene->getChoice(i), hp, childPath, possibleBestPath);
 
         if (childLoot != -1) {
             int totalLoot = scene->getData()->getLoot() + childLoot;
@@ -422,7 +422,7 @@ int Adventure::bestLoot(Scene<Moment>* scene, int hp, const std::string& path, s
 void Adventure::optimalRun() const {
     std::string optimalPath;
 
-    int optimalLoot = bestLoot(tree_.getRoot(), startHp_,"",optimalPath);
+    int optimalLoot = bestLoot(tree_.getRoot(), startHp_, "", optimalPath);
 
     std::cout << "Optimal advisor" << std::endl;
 

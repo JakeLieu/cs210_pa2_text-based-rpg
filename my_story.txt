@@ -1,6 +1,168 @@
 START_HP 10
-SCENE Replace this file with your own story.
+
+SCENE In 1849, you leave Independence, Missouri, with a wagon headed west toward California, chasing the promise of gold. You only have enough money to prepare in one of three ways before embarking.
 HP 0
 LOOT 0
+ITEM none
+CHOICES 3
+
+LABEL Buy medicine and wagon repair supplies
+SCENE A hard storm hits along the Platte River while you are crossing. The wagon takes damage and you're injured, but the medicine and repair supplies you bought keep the situation under control.
+HP -1
+LOOT 0
+ITEM medicine kit
+CHOICES 2
+
+LABEL Stop for a day to rest and repair the wagon
+SCENE You spend a full day resting, tightening the wagon, and letting everyone recover before moving west again.
+HP 2
+LOOT 0
+ITEM none
+CHOICES 2
+
+LABEL Trade for canvas, rope, and spare parts
+SCENE At a busy trail stop, you trade for extra repair materials before entering rougher country.
+HP 0
+LOOT 0
+ITEM canvas patch
+CHOICES 2
+
+LABEL Stop and care for the sick when illness spreads through camp
+SCENE Sickness moves through the wagon party. You stop long enough to rest and care for the sick, but the delays along the trail put you closer to the Sierra Nevada as winter approaches.
+HP -2
+LOOT 0
+ITEM none
+CHOICES 2
+
+LABEL Take the shorter route through the snow
+SCENE You push through the snowy Sierra route. The crossing is brutal, but you reach California and sell a few valuable supplies you no longer need.
+HP -3
+LOOT 8
+ITEM none
+CHOICES 0
+
+LABEL Take the longer lower-elevation route
+SCENE You avoid the worst snow by taking a longer lower-elevation route. You arrive in California tired but alive with some supplies left to trade.
+HP -1
+LOOT 5
+ITEM none
+CHOICES 0
+
+LABEL Keep moving instead of stopping for the sick
+SCENE You refuse to stop when the fever gets worse. By the next camp, the sickness has become too severe to continue.
+HP -12
+LOOT 0
+ITEM none
+CHOICES 0
+
+LABEL Keep your money and continue without spare parts
+SCENE A wagon part finally snaps far from the next settlement. Without the spare materials you passed up, your journey west ends on the trail.
+HP -10
+LOOT 0
+ITEM none
+CHOICES 0
+
+LABEL Keep moving despite the storm
+SCENE You push through the storm without resting. Exhaustion and wagon damage pile up until you can no longer continue.
+HP -10
+LOOT 0
+ITEM none
+CHOICES 0
+
+LABEL Spend the money on extra grain and feed
+SCENE Your animals stay strong from the extra grain, but you reach a river swollen by recent rain.
+HP 1
+LOOT 0
+ITEM grain sack
+CHOICES 2
+
+LABEL Wait for the river to fall
+SCENE You wait beside the river and do a little trading with another wagon party. That night, thieves approach your camp.
+HP 0
+LOOT 2
+ITEM none
+CHOICES 2
+
+LABEL Let the thieves take some supplies and avoid a fight
+SCENE You give up part of your supplies rather than risk a fight. The loss hurts, but your group stays safe and eventually reaches California.
+HP -1
+LOOT 0
+ITEM none
+CHOICES 0
+
+LABEL Confront the thieves
+SCENE You fight back. No one is killed, but people are hurt, animals scatter, and the wagon party is too damaged to continue west.
+HP -10
+LOOT 0
+ITEM none
+CHOICES 0
+
+LABEL Cross the river now
+SCENE You attempt the crossing while the water is still high. The wagon nearly tips, and you lose time pulling it free from the current using rope from the back.
+HP -3
+LOOT 0
+ITEM rope
+CHOICES 2
+
+LABEL Stop and let the animals graze
+SCENE You stop after the crossing and let the animals recover. The slower pace pays off, and you reach California with healthy animals and useful supplies.
+HP 1
+LOOT 4
+ITEM none
+CHOICES 0
+
+LABEL Ration feed and keep moving
+SCENE You keep pushing without giving the animals enough time or feed to recover. One by one they collapse, leaving the wagon stranded.
+HP -8
+LOOT 0
+ITEM none
+CHOICES 0
+
+LABEL Save your money and leave with basic supplies
+SCENE Your lightly supplied wagon hits a deep rut and cracks the wagon tongue. While checking the roadside, you find a few abandoned valuables.
+HP -1
+LOOT 2
+ITEM none
+CHOICES 2
+
+LABEL Search the trail for repair supplies
+SCENE You search nearby abandoned wagons and find usable repair pieces along with a small bottle of medicine and a few valuables.
+HP 0
+LOOT 2
+ITEM medicine bottle
+CHOICES 2
+
+LABEL Stop to make repairs and care for the sick
+SCENE You repair the wagon and give the sick time to recover. You eventually reach California in good enough condition to sell the valuables you found along the trail.
+HP -2
+LOOT 6
+ITEM none
+CHOICES 0
+
+LABEL Keep traveling without stopping
+SCENE You gamble that the sickness will pass on its own. It does not, and the journey ends before you reach California.
+HP -10
+LOOT 0
+ITEM none
+CHOICES 0
+
+LABEL Tie the crack and keep moving
+SCENE You lash the cracked wagon tongue together and keep moving. The rough repair saves time, and you collect valuables from abandoned camps along the trail.
+HP -3
+LOOT 4
+ITEM none
+CHOICES 2
+
+LABEL Take the direct mountain route
+SCENE At an abandoned camp near the mountains, you find valuable tools and mining gear left behind by earlier travelers. Greedy for the extra value, you load it into the wagon and push into deep snow, where the overloaded wagon becomes trapped and the journey ends.
+HP -7
+LOOT 6
+ITEM none
+CHOICES 0
+
+LABEL Take the longer lower-elevation route
+SCENE You avoid the dangerous mountain shortcut and take the longer lower-elevation route. You reach California with little strength left, but some of your scavenged valuables survive the trip.
+HP -2
+LOOT 3
 ITEM none
 CHOICES 0
